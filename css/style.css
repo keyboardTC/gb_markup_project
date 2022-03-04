@@ -1,0 +1,61 @@
+a:hover, .fa:hover{
+    color: var(--btn-color);
+}
+/* <============== Header styling ============> */
+.logo{
+    width:200px;
+    justify-self: center
+}
+.m-hide{
+    display: none;
+}
+.page-header{
+    display: flex;
+    justify-content:space-between;
+    background-color: beige;
+}
+.main-container, .page-header{
+    padding: 0 3em 0 3em;
+    margin:0em auto;
+    max-width: 100em;
+}
+.top-cart{
+    justify-content: center;
+    align-self: center; 
+}
+.nav-toggle{
+    background-color: beige;
+    border: 0px white;
+}
+
+
+
+/* ==== Main container ==== */
+.main-container{
+    background-color: brown;
+}
+
+/* ======== start Media Queries */
+@media only screen and (min-width: 992px){
+    /* <============== Header styling ============> */
+    .m-hide{
+        display: block;
+    }
+    .nav-toggle{
+        display: none;
+    }
+    .navigation{
+        justify-content: center;
+        align-self: center; 
+    }
+    .navigation ul{
+        display: flex;
+        justify-content:center;
+        font-size: 2rem;
+        align-self: center; 
+        gap: 4em;
+    }
+    .navigation ul li{
+        display:inline;
+    }
+}
