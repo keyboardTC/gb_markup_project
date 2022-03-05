@@ -3,7 +3,7 @@ a:hover, .fa:hover{
 }
 /* <============== Header styling ============> */
 .logo{
-    width:200px;
+    width:11em;
     justify-self: center
 }
 .m-hide{
@@ -26,17 +26,78 @@ a:hover, .fa:hover{
 .nav-toggle{
     background-color: beige;
     border: 0px white;
+    align-self: center; 
+    justify-content: center;
 }
+.nav-toggle .fa{
+    margin: 0px auto;
+    /* align-self: center;  */
+}
+.header-cart li .fa{
+    margin: 0px auto;
+    /* align-self: center; */
+}
+.sticky {
+    position: fixed;
+    /* margin: 0px auto; */
+    background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ),url(../img/hardwood-g6ddf7b888_1920.jpg);
+    /* left: 0%; */
+    width: 100%;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+  }
 
-
-
-/* ==== Main container ==== */
+/* ==== Main container =========================== */
 .main-container{
     background-color: brown;
 }
+#prods{
+    display: grid;
+    row-gap: 3em;
+}
+.product{
+    display: grid;
+    background-color: black;
+}
+.prod-details{
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+    /* justify-items: start; */
+    justify-content: space-between; 
+}
+#cat-name{
+    grid-column: 1 /span 2;
+}
+.add-to-cart-btn {
 
-/* ======== start Media Queries */
+}
+.pages{
+    display: flex;
+    gap: 2em;
+    align-self: center;
+}
+.pagination{
+    display: flex;
+    gap: 2em;
+    margin-top: 2em;
+    justify-content: center;
+}
+
+/* ======== start Media Queries ==================*/
 @media only screen and (min-width: 992px){
+
+    /* ====== main container ============================== */
+    #prods{
+        display: grid;
+        grid-template-columns: repeat(2, 45%);
+        /* justify-items: center; */
+        justify-content:space-between;
+    }
+
+}
+
+@media only screen and (min-width: 1316px){
     /* <============== Header styling ============> */
     .m-hide{
         display: block;
@@ -58,4 +119,17 @@ a:hover, .fa:hover{
     .navigation ul li{
         display:inline;
     }
+
+    /* ====== main container ============================== */
+    #prods{
+        display: grid;
+        grid-template-columns: repeat(3, 29%);
+        /* justify-items: center; */
+        justify-content:space-between;
+    }
+    .product{
+        /* width: 250px;
+        height: 250px; */
+    }
 }
+
