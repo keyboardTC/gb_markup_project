@@ -139,15 +139,10 @@ a:hover, .fa:hover{
     align-items: center;
     justify-content: center; 
     height: 8em;
-    /* justify-items: center; */
-    /* background-color: bisque; */
 }
 .page-banner>h2{
     place-self: center;
     justify-self: center;
-    /* align-self: center; */
-    /* margin: 0px auto; */
-    /* height: 5em; */
 }
 .logo{
     width:11em;

@@ -1,4 +1,5 @@
 // 'use strict'
+
 //  Stict menu on scrolling
 window.onscroll = function() {myFunction()};
 var navbar = document.querySelector('.page-header');

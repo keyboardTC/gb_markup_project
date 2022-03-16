@@ -2,6 +2,7 @@
 
 let cartPrutoductList = new Array();
 const KEY = "my_cart";
+
 //  Stict menu on scrolling
 window.onscroll = function() {myFunction()};
 var navbar = document.querySelector('.page-header');
@@ -126,7 +127,6 @@ function addToCart(prodImg, prodName, prodDesc, prodCat, prodRating, prodPrice) 
 
   // console.log(`PROD-value: ${x}`);
 };
-
 
 // $(function() {
 

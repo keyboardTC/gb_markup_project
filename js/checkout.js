@@ -15,8 +15,7 @@ function myFunction() {
 const prod_list_div = document.querySelector('.prods-list');
 const price_div = document.querySelector('#finalP-div');
 $(function(){
-    // let cartList = getCartProducts();
-    // console.log("CHECKOUT PAGE LOADED "+cartList)
+
     displayProducts()
 });
 
