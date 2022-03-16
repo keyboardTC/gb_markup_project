@@ -87,6 +87,12 @@ function setProducts(product_array) {
 }
 
 function addToCart(prodImg, prodName, prodDesc, prodCat, prodRating, prodPrice) {
+  // alert("added to cart")
+  var alert_div = document.querySelector('.alert-div');
+  alert_div.classList.remove('ahide')
+  alert_div.classList.add('alert-appear')
+  setTimeout(() => alert_div.classList.add('ahide'), 2000);
+
   let product = new Product(prodImg, prodName,prodCat, prodDesc, prodPrice, prodRating, prodCat);
 
   if (KEY in localStorage) {
@@ -121,10 +127,7 @@ function addToCart(prodImg, prodName, prodDesc, prodCat, prodRating, prodPrice) 
   // console.log(`PROD-value: ${x}`);
 };
 
-// $(".d-to-cart-btn").on("click", function(params) {
-  
-// });
 
+// $(function() {
 
-
-
+// })

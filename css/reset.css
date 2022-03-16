@@ -1,6 +1,9 @@
 *, *::before, *::after {
 	box-sizing: inherit;
 }
+html, body {
+    height: 100%;
+}
 html {
 	box-sizing: border-box;
 	--global-color-primary: #1f1f1f; 
@@ -15,12 +18,17 @@ html {
     --font-family-monospace: SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
 }
 body {
+    display: flex;
+    flex-direction: column;
 	margin: 0px;
 	background-color: var(--global-color-primary);
+    background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ),url(../img/tiles-shapes-g6cd7d2b35_1920.jpg);
 	font-family: var(--font-family-monospace);
 	color: var(--prim-text-color);
 }
-
+.page-banner>h2{
+    font-size: xxx-large;
+}
 
 /* Preview each of these suggested resets before beginning your project styling */
 
@@ -156,6 +164,7 @@ a:hover, .fa:hover{
     box-shadow:1px 15px 60px 15px #000000; 
 }
 .main-container{
+    flex: 1 0 auto;
     margin:0em auto;
     max-width: 100em;
 }
@@ -180,7 +189,7 @@ a:hover, .fa:hover{
 .sticky {
     position: fixed;
     /* margin: 0px auto; */
-    background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ),url(../img/hardwood-g6ddf7b888_1920.jpg);
+    background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ),url(../img/starry-sky-g2f92ae4d0_1920.jpg);
     /* left: 0%; */
     width: 100%;
     top: 0;
@@ -218,6 +227,7 @@ a:hover, .fa:hover{
     display: flex;
     justify-content: space-around;
     margin-top: 8em;
+    background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ),url(../img/starry-sky-g2f92ae4d0_1920.jpg);
     color: var(--alt-color);
 }
 #author-details{
