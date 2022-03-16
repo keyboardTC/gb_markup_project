@@ -9,8 +9,8 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> 
         <script src="https://use.fontawesome.com/5e117df967.js"></script>
         <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-        <link rel="stylesheet" href="./css/style.css">
         <link rel="stylesheet" href="./css/reset.css">
+        <link rel="stylesheet" href="./css/checkout.css">
     </head>
     <body>
         <!-- Header content -->
@@ -23,7 +23,6 @@
             </div>
             <button type="button" class="nav-toggle" name="menu button">
                 <!-- <span class="material-icons">menu</span> -->
-                <span data-count="5" style="color: brown;"> hello</span>
                 <i class="fa fa-bars fa-4x"></i>
                 
             </button>
@@ -31,7 +30,7 @@
             <!-- Navigation -->
             <nav aria-label="Primary" class="navigation m-hide">
                 <ul class="menu">
-                    <li><a href="#">Home</a></li>
+                    <li><a href="./">Home</a></li>
                     <li><a href="#">About</a></li>
                     <li><a href="#">Contact Us</a></li>
                 </ul>
@@ -50,17 +49,40 @@
         <!-- Main Content -->
         <main class="main-container">
             <div class="page-banner">
-                <h2>Page Title</h2>
+                <h2>CHECK OUT</h2>
             </div>
 
-            <section class="product-results">
-                <div id="prods">
+            <section id="checkout-section">
+                <div id="checkout-prods-container">
+                    <article id="btn-return-shop">
+                        <a href="./index.html"><button class="btn"><i class="fa fas fa-shopping-bag"></i> CONTINUE SHOPPING</button></a>
+                        <a href="./cart.html"><button class="btn"><i class="fa fas fa-shopping-cart"></i> RETURN TO CART</button></a>
+                    </article>
+                </div>
+                <div id="checkout-payment-container">
+                    <div class="prods-list">
+                        <!-- <div class="prod">
+                            <img src="./img/cream-g887ec9cae_1920.jpg" alt="Product Image">
+                            <div class="checkout-pQ">
+                                <h1>Product Name</h1>
+                                <p>Quantity: 6</p>
+                            </div>
+                            <p>Total: $300</p>
+                        </div> -->
+                    </div>
+                    <div id="finalP-div">            
+                        <!-- <h3>Final Price 300px</h3> -->
+                    </div>
                 </div>
             </section>
         </main>
+
+        <!-- --------- FOOTER SECTION ----------- -->
+        <footer class="footer">
+            <h2 id="author-details">Tata Awah - 101334251</h2>
+        </footer>
         
         <!-- js scripts -->
-        <script src="./js/script.js" async defer></script>
-        <script src="./js/script.js" async defer></script>
+        <script type="module" src="./js/checkout.js" async defer></script>
     </body>
 </html>

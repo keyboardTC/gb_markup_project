@@ -30,40 +30,6 @@ class Product{
   }
 }
 
-// const productsAr = [
-//     {
-//       prod_img: 'prod1.jpg',
-//       name: 'Product3',
-//       brand: "colourpop",
-//       description: 'Here is a shot of this product that might entice a user to click and add it to their cart',
-//       price: 50.00,
-//       price_sign: "$",
-//       product_colors: ['Fair 05', 'Ziggie'],
-//       category: "lipstick"
-//     },
-//     {
-//         prod_img: 'prod1.jpg',
-//         name: 'Blotted Lip',
-//         brand: "colourpop",
-//         description: 'Here is a shot of this product that might entice a user to click and add it to their cart',
-//         price: 50.00,
-//         price_sign: "$",
-//         product_colors: ['Fair 05', 'Ziggie'],
-//         category: "lipstick"
-//     },
-//     {
-//         prod_img: 'prod1.jpg',
-//         name: 'Lippie Pencil',
-//         brand: "colourpop",
-//         description: 'Here is a shot of this product that might entice a user to click and add it to their cart',
-//         price: 50.00,
-//         price_sign: "$",
-//         product_colors: ['Fair 05', 'Ziggie'],
-//         category: "lipstick"
-//     }
-//   ]
-// setProducts(productsAr);
-
 // =========== Select the element all products
 // let the_ProductsAr = productsAr
 const products_grid = document.querySelector('#prods');
@@ -106,8 +72,8 @@ function setProducts(product_array) {
             <div class="prod-details">
                 <i class="cat-name">${(!prod.category) ? `Category: Basic`: `Category : ${prod.category}`}  </i>
                 <i class="prod-rating">${(!prod.rating) ? `Not Rated`: `Rating : ${prod.rating}`}  </i>
-                <h3 class="prod-Price">Price: $${prod.price}</h3>
-                <button value="" onClick="addToCart('${prod.image_link}', '${prod.name}', '${prod.description.substring(0, 55).replace("'", "").replace("\n", "").trim()}', '${(!prod.category) ? `Category: Basic`: `Category : ${prod.category}`}', '${(!prod.rating) ? `Not Rated`: `Rating : ${prod.rating}`}', '${prod.price}')" type="button" class="add-to-cart-btn"><i class="fa fas fa-shopping-cart"></i>Add to Cart</button>
+                <h4 class="prod-Price">Price: $${prod.price}</h4>
+                <button  value="" onClick="addToCart('${prod.image_link}', '${prod.name}', '${prod.description.substring(0, 55).replace("'", "").replace("\n", "").trim()}', '${(!prod.category) ? `Category: Basic`: `Category : ${prod.category}`}', '${(!prod.rating) ? `Not Rated`: `Rating : ${prod.rating}`}', '${prod.price}')" type="button" class="add-to-cart-btn"><i class="fa fas fa-shopping-cart"></i> Add to Cart</button>
             </div>
             `  
             

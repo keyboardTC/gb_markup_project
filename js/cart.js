@@ -1,3 +1,16 @@
+// 'use strict'
+//  Stict menu on scrolling
+window.onscroll = function() {myFunction()};
+var navbar = document.querySelector('.page-header');
+var sticky = navbar.offsetTop;
+function myFunction() {
+  if (window.pageYOffset > 100) {
+    navbar.classList.add("sticky")
+  } else {
+    navbar.classList.remove("sticky");
+  }
+}
+
 const KEY = "my_cart";
 const KEY_price = "my_final_price";
 var subTotal_price = 0;
@@ -14,14 +27,15 @@ $(function() {
 })
 class Total{
     constructor(subTotal=0.00, price_afterTax=0.00, discount_price=0.00, discount=0.0){
-        this.subTotal = Number(subTotal);
+        this.subTotal = Number(subTotal).toFixed(2);
         this.price_afterTax = parseFloat(price_afterTax);
         this.discount_price = Number(discount_price);
         this.discount = Number(discount);
     }
 }
 
-function getTotal(KEY_price) {
+// ====Getting Total Price from local storage =========
+function getTotal(KEY_price ="my_final_price") {
     if (KEY_price in localStorage) {
         const myTotalList = JSON.parse(localStorage.getItem(KEY_price));
         return myTotalList;
@@ -35,10 +49,10 @@ function getTotal(KEY_price) {
 // ===== Get Products from LocalStorage cart ==
 function getCartProducts() {
     let cart;
-    if (localStorage.getItem(KEY) === null) {
+    if (localStorage.getItem("my_cart") === null) {
         cart = [];
     } else {
-        cart = JSON.parse(localStorage.getItem(KEY));
+        cart = JSON.parse(localStorage.getItem("my_cart"));
     }
     return cart;
 }
@@ -98,7 +112,7 @@ function displayCartProds() {
                 cart_prod_area.appendChild(article_cart_prod);
             }) 
     
-            // console.log("Hello "+subTotal_price)
+            console.log("Hello "+subTotal_price)
             displayTotalSection(subTotal_price)
         } catch (error) {
             
@@ -111,14 +125,14 @@ function displayTotalSection(subTotal_price) {
     calSubTotal(subTotal_price)
     const myTotalList = getTotal(KEY_price);
     order_summary.innerHTML = `
-        <h1>Order Summary</h1>
+        <h1>ORDER SUMMARY</h1>
         <h4>SubTotal: $ ${myTotalList.subTotal}</h4>
         <h4>Tax : 13% </h4>
         <h4>Price After Tax: $ ${myTotalList.price_afterTax}</h4>
         <h4>Discount : ${myTotalList.discount} % </h4>
         <h4>Price after Discount: $ ${myTotalList.discount_price}</h4>
         <h4 class="hImportant">Final Total: $ ${myTotalList.discount_price}</h4>
-        <button id="btn-proceed-checkout" onclick="window.location.href='./checkout.html';">PROCEED TO CHECKOUT</button>
+        <button id="btn-proceed-checkout" class="btn" onclick="window.location.href='./checkout.html';"><i class="fa fas fa-money"></i> PROCEED TO CHECKOUT</button>
     `
 }
 // ========= Delete Product =============
@@ -144,7 +158,7 @@ function removeProduct(id) {
 // ========= Doing the Prices calculation =========
 function calSubTotal(prods_total) {
     console.log(`Total before taxe: ${prods_total}`) 
-    tax_price = (prods_total*0.13).toFixed(2);
+    let tax_price = (prods_total*0.13).toFixed(2);
     console.log(`Total taxe: ${tax_price}`) 
     Total_price_afterTax = (Number(prods_total)+Number(tax_price)).toFixed(2);
     console.log(`Total after taxe: ${Total_price_afterTax}`) 
@@ -227,3 +241,5 @@ function updatLocalProds(id, quantity, totalPrice, subTotal) {
         console.error(`Key ${KEY} Does not exist`);
     }
 }
+
+// export{getCartProducts, calSubTotal};
